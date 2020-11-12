@@ -54,11 +54,11 @@ configuration_1 = "03"
 cfg_ack_geo = "03"
 
 # Astrocast dev wifi
-ssid = b"Astrocast Corporate"
-password = b"GjrxFnm16HFYw"
-token = b"Hu3Y5QIdIdTLJUZyNombDsS0L2teutF1k1HAcMBRSHA1g5MnUpGrSxAoKcmcwDSoH1BRmywaVEr510UOpfteWniVAsY8zyup"
-configuration_wifi = binascii.hexlify(ssid).ljust(66, b'0') + binascii.hexlify(password).ljust(128, b'0') + binascii.hexlify(token).ljust(194, b'0')
-configuration_wifi = configuration_wifi.decode("utf-8")
+# ssid = b"Astrocast Corporate"
+# password = b"GjrxFnm16HFYw"
+# token = b"Hu3Y5QIdIdTLJUZyNombDsS0L2teutF1k1HAcMBRSHA1g5MnUpGrSxAoKcmcwDSoH1BRmywaVEr510UOpfteWniVAsY8zyup"
+# configuration_wifi = binascii.hexlify(ssid).ljust(66, b'0') + binascii.hexlify(password).ljust(128, b'0') + binascii.hexlify(token).ljust(194, b'0')
+# configuration_wifi = configuration_wifi.decode("utf-8")
 
 geolocation_1 = "98badcfe98badcfe"
 payload_1 = "00011574abbf"
@@ -179,7 +179,7 @@ def text_to_hex(text):
 #--------------------------------------------------------------------------------
 
 send(CFG_WR, "", "00")
-send(WIF_WR, "", configuration_wifi)
+# send(WIF_WR, "", configuration_wifi)
 send(PLD_ER, "", "0100" + text_to_hex(b"A"))
 #send(PLD_ER, "", "0200" + text_to_hex(b"B"))
 #send(PLD_ER, "", "0300" + text_to_hex(b"C"))
