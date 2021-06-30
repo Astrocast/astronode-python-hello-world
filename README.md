@@ -1,2 +1,2 @@
 # astronode-python-library
-Astronode Python Library
+Python Library for the Astronode S
