@@ -143,8 +143,8 @@ def generate_message(payload):
 #--------------------------------------------------------------------------------
 
 
-# If Astronode S DevKit Wi-Fi
-#send(WIF_WR, configuration_wifi)
+# If using the Astronode S DevKit Wi-Fi (comment if using Satellite board)
+send(WIF_WR, configuration_wifi)
 
 # If you want to specify geolocation
 send(GEO_WR, generate_geolocation(latitude, longitude))
