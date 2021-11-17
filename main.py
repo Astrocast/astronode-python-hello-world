@@ -80,8 +80,8 @@ configuration_wifi = configuration_wifi.decode("utf-8")
 # --------------------------------------------------------------------------------
 
 def generate_geolocation(lat, lng):
-    lat_tmp = '{:08x}'.format(int(lat * 1e7))
-    lng_tmp = '{:08x}'.format(int(lng * 1e7))
+    lat_tmp = '{:08x}'.format(int(lat * 1e7) & (2**32-1))
+    lng_tmp = '{:08x}'.format(int(lng * 1e7) & (2**32-1))
     geolocation = lat_tmp[6]
     geolocation += lat_tmp[7]
     geolocation += lat_tmp[4]
