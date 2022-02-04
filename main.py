@@ -6,7 +6,7 @@ E-mail:             gseimbille@astrocast.com
 
 Created on:         30.06.2021
 Python Version:     3.8
-Supported Hardware: Astronode S DevKit
+Supported Hardware: Astronode S/S+/DevKit
 
 """
 
