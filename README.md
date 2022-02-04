@@ -1,5 +1,5 @@
-# astronode-python-library
-Python Library for the Astronode S module.
+# astronode-python-hello-world
+Python "Hello World" example for the Astronode S module.
 
 
 ## Disclaimer
