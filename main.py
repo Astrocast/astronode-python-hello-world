@@ -135,7 +135,7 @@ def text_to_hex(text):
 
 
 def generate_message(payload):
-    return str(randint(0, 9999)) + text_to_hex(payload)
+    return ('{:04s}'.format((hex(randint(0, 65535)))[2:6])) + text_to_hex(payload)
 
 
 # --------------------------------------------------------------------------------
