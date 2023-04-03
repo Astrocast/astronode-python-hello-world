@@ -19,8 +19,10 @@ import serial
 from binascii import hexlify
 from random import *
 
-# To match with your local serial port
+# To match with your local serial port (Windows)
 SerialPort = 'COMx'
+# To match with your local serial port (Linux)
+# SerialPort = "/dev/ttyUSB0"
 
 # --------------------------------------------------------------------------------
 # Initializations
