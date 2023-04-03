@@ -9,14 +9,14 @@ python v3.8+
 * [pyserial](https://pypi.org/project/pyserial)
 
 # How to run the application
-## Standalone application
+## Standalone
 1. Make sure you meet the system requirements.
 2. Check the `SerialPort` device variable in main.py script:
-* Use `COMx` devices for Windows hosts.
-* Use `/dev/ttyUSBx` for Linux hosts.
+   - Use `COMx` devices for Windows hosts.
+   - Use `/dev/ttyUSBx` for Linux hosts.
 3. Run the main.py script.
 
-## Docker image
+## Docker
 1. Build the docker image:
 ```
 docker build -t astronode-python-hello-world .
