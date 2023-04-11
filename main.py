@@ -128,7 +128,7 @@ def send(opcode, data):
 
 
 def receive():
-    output = ser.read(160)
+    output = bytearray(ser.read(160))
     print("[received]  <--  " + " ".join(["{:02x}".format(x) for x in output]))
 
 
@@ -137,7 +137,7 @@ def text_to_hex(text):
 
 
 def generate_message(payload):
-    return ('{:04s}'.format((hex(randint(0, 65535)))[2:6])) + text_to_hex(payload)
+    return ('{:4s}'.format((hex(randint(0, 65535)))[2:6])) + text_to_hex(payload)
 
 
 # --------------------------------------------------------------------------------
