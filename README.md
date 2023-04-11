@@ -3,7 +3,8 @@ Python "Hello World" example for the Astronode S module.
 
 # System requirements
 ## Python version
-python v3.8+
+python v2.7+
+python v3.4+
 ## Python modules
 * [crcmod](https://pypi.org/project/crcmod)
 * [pyserial](https://pypi.org/project/pyserial)
