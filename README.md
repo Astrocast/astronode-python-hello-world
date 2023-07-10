@@ -10,12 +10,25 @@ Python "Hello World" example for the Astronode S module.
 * [pyserial](https://pypi.org/project/pyserial)
 
 # How to run the application
-## Standalone
+## Standalone generic computer
 1. Make sure you meet the system requirements.
 2. Check the `SerialPort` device variable in main.py script:
    - Use `COMx` devices for Windows hosts.
    - Use `/dev/ttyUSBx` for Linux hosts.
 3. Run the main.py script.
+
+## Standalone Raspberry Pi 4 Model B
+1. Make sure you meet the system requirements.
+2. Using raspi-config, disable login shell over serial and enable serial interface.
+3. Use `/dev/ttyS0` in main.py script.
+
+### Hardware setup
+    RASP 40-PIN              ASTRONODE FTDI TTL
+    -------------------------------------------
+    PIN1  3V3       <---->   3V3
+    PIN9  GND       <---->   GND
+    PIN14 UART_TX   <---->   RX
+    PIN15 UART_RX   <---->   TX
 
 ## Docker
 1. Build the docker image:
