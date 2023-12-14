@@ -82,8 +82,8 @@ configuration_wifi = configuration_wifi.decode("utf-8")
 # --------------------------------------------------------------------------------
 
 def generate_geolocation(lat, lng):
-    lat_tmp = '{:08x}'.format(int(lat * 1e7) & (2**32-1))
-    lng_tmp = '{:08x}'.format(int(lng * 1e7) & (2**32-1))
+    lat_tmp = f'{int(lat * 1e7) & (2**32-1):08x}'
+    lng_tmp = f'{int(lng * 1e7) & (2**32-1):08x}'
     geolocation = lat_tmp[6]
     geolocation += lat_tmp[7]
     geolocation += lat_tmp[4]
@@ -104,7 +104,7 @@ def generate_geolocation(lat, lng):
 
 
 def generate_crc(data):
-    crc_tmp = '{:04x}'.format(crc16(codecs.decode(data, 'hex')))
+    crc_tmp = f'{crc16(codecs.decode(data, "hex")):04x}'
     crc = crc_tmp[2]
     crc += crc_tmp[3]
     crc += crc_tmp[0]
@@ -123,13 +123,13 @@ def send(opcode, data):
     msg = bytearray.fromhex(msg)
     ser.write(msg)
     print("")
-    print("[sent]      -->  " + " ".join(["{:02x}".format(x) for x in msg]))
+    print("[sent]      -->  " + " ".join([f'{x:02x}' for x in msg]))
     receive()
 
 
 def receive():
     output = bytearray(ser.read(160))
-    print("[received]  <--  " + " ".join(["{:02x}".format(x) for x in output]))
+    print("[received]  <--  " + " ".join([f'{x:02x}' for x in output]))
 
 
 def text_to_hex(text):
@@ -137,7 +137,7 @@ def text_to_hex(text):
 
 
 def generate_message(payload):
-    return ('{:4s}'.format((hex(randint(0, 65535)))[2:6])) + text_to_hex(payload)
+    return f'{randint(0, 65535):04x}' + text_to_hex(payload)
 
 
 # --------------------------------------------------------------------------------
